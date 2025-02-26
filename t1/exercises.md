@@ -77,7 +77,3 @@
 3. Compare the accuracy before and after tuning.
 
 **Expected Output:** A summary of the best hyperparameters and improved model performance.
-
----
-
-This tutorial ensures hands-on experience with **data extraction, cleaning, feature engineering, and ML modeling**, reinforcing the concepts from **Course 1**. 🚀
