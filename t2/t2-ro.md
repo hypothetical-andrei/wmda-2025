@@ -115,7 +115,3 @@
 3. **Puncte cheie de verificat**
    - Configurarea corectă a grilei de parametri.
    - Timpul de rulare (recomandat să fie o căutare rapidă pentru exercițiu de 10 minute).
-
-4. **Extensie posibilă** (dacă rămâne timp)
-   - Compară performanța fiecărui model pe aceleași fold-uri de validare.
-   - Experimentează cu metrici alternative precum recall sau scorul F1 în căutarea parametrilor.

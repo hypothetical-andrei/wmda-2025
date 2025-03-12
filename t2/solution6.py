@@ -25,5 +25,4 @@ y = wine.target
 
 # 6. Retrieve the best parameters and the corresponding score
 
-
 # 7. Evaluate the best model on the test set

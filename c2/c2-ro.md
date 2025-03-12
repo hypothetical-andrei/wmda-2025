@@ -28,7 +28,7 @@
 - **Antrenare vs. Testare**:
   - Antrenare pe date etichetate
   - Testare pentru validarea performanței
-- **[Exemplu: Prezintă un set de date mic cu caracteristici precum vârsta, venitul și o etichetă binară care indică „purchased” sau „not purchased.”]**
+- **[Exemplu: Prezintă un set de date mic cu caracteristici precum vârsta, venitul și o etichetă binară care indică „purchased” sau „not purchased.”](https://github.com/hypothetical-andrei/wmda-2025/blob/main/c2/example1.py)**
 
 ---
 
@@ -39,7 +39,7 @@
   - Simplu, rapid, funcționează bine cu date zgomotoase
 - **Dezavantaje**:
   - Presupunerea independenței poate fi nerealistă în anumite domenii
-- **[Exemplu: Clasificarea recenziilor ca pozitive sau negative pe baza frecvenței cuvintelor]**
+- **[Exemplu: Clasificarea recenziilor ca pozitive sau negative pe baza frecvenței cuvintelor](https://github.com/hypothetical-andrei/wmda-2025/blob/main/c2/example2.py)**
 - **[Articol](https://towardsdatascience.com/multinomial-naive-bayes-for-documents-classification-and-natural-language-processing-nlp-e08cc848ce6/)**
 ---
 
@@ -51,7 +51,7 @@
   - Coeficienții pot fi analizați pentru a vedea impactul caracteristicilor
 - **Când se utilizează**:
   - Clasificare binară cu o graniță de decizie liniară
-- **[Exemplu: Prezicerea probabilității ca un client să facă o achiziție pe baza datelor demografice]**
+- **[Exemplu: Prezicerea probabilității ca un client să facă o achiziție pe baza datelor demografice](https://github.com/hypothetical-andrei/wmda-2025/blob/main/c2/example3.py)**
 - **[Articol](https://datatab.net/tutorial/logistic-regression)**
 
 
@@ -64,7 +64,7 @@
   - Ușor de vizualizat și interpretat
 - **Dezavantaje**:
   - Predispus la suprapotrivire dacă nu este tăiat (pruned)
-- **[Exemplu: Un arbore de decizie pentru aprobarea unui împrumut pe baza caracteristicilor precum venit, scor de credit și raportul datorii/venit]**
+- **[Exemplu: Un arbore de decizie pentru aprobarea unui împrumut pe baza caracteristicilor precum venit, scor de credit și raportul datorii/venit](https://github.com/hypothetical-andrei/wmda-2025/blob/main/c2/example4.py)**
 - **[Articol](https://www.kdnuggets.com/2020/01/decision-tree-algorithm-explained.html)**
 ---
 
@@ -87,7 +87,7 @@
 - **Când se utilizează**:
   - Lasso: preferi modele mai simple, cu mai puține caracteristici
   - Ridge: vrei să păstrezi toate caracteristicile, dar să reduci variația mare
-- **[Exemplu: Aplicarea regresiei logistice cu regularizare L1 sau L2 pe un set de date cu multe caracteristici și observarea caracteristicilor semnificative]**
+- **[Exemplu: Aplicarea regresiei logistice cu regularizare L1 sau L2 pe un set de date cu multe caracteristici și observarea caracteristicilor semnificative](https://github.com/hypothetical-andrei/wmda-2025/blob/main/c2/example5.py)**
 - **[Articol]((https://www.analyticsvidhya.com/blog/2021/07/metrics-to-evaluate-your-classification-model-to-take-the-right-decisions/))**
 
 ---
@@ -103,7 +103,7 @@
   - Graficul ratei adevărat pozitive vs. ratei fals pozitive
   - ROC = Receiver-operating characteristic curve
   - AUC = Aria sub curba ROC (măsură a performanței generale)
-- **[Exemplu: Prezintă o matrice de confuzie pentru o problemă de clasificare binară și calculează precizia, recall-ul și acuratețea]**
+- **[Exemplu: Prezintă o matrice de confuzie pentru o problemă de clasificare binară și calculează precizia, recall-ul și acuratețea](https://github.com/hypothetical-andrei/wmda-2025/blob/main/c2/example6.py)**
 - **[Articol](https://towardsdatascience.com/understanding-the-roc-curve-and-auc-dd4f9a192ecb/)**
 
 ---
@@ -113,7 +113,22 @@
   - Dezechilibru de clase: acuratețea poate fi înșelătoare
   - Costul fals pozitive vs. fals negative
   - Raportarea mai multor metrici pentru claritate
-- **[Exemplu: Set de date dezechilibrat în domeniul sănătății, unde fals negativele pot fi foarte costisitoare]**
+- **[Exemplu: Set de date dezechilibrat în domeniul sănătății, unde fals negativele pot fi foarte costisitoare](https://github.com/hypothetical-andrei/wmda-2025/blob/main/c2/example7.py)**
+
+---
+
+### 10.1: Tuning de hiperparametri cu GridSearchCV
+- **Ce este este ajustarea hiperparametrilor?**
+  - Procesul de a găsi cel mai bun set de parametri (ex. rata de învățare, puterea de regularizare) care nu sunt învățați direct în timpul antrenării modelului.
+  - Alegerea unor hiperparametri corespunzători poate îmbunătăți semnificativ performanța și capacitatea de generalizare a modelului.
+- **Prezentare Generală GridSearchCV**:
+  - Căutare exhaustivă peste valorile specificate pentru anumiți parametri.
+  - Utilizează **cross-validation** intern:
+    1. Împarte datele în mai multe fold-uri.
+    2. Antrenează și validează modelul pentru fiecare combinație de parametri.
+    3. Alege combinația care oferă cea mai bună performanță medie.
+- **Exemplu**:
+  - [Exemplu: Arată cum tuning-ul pentru `max_depth` într-un Decision Tree (între 2 și 10) poate găsi o adâncime optimă care să echilibreze underfitting și overfitting.](https://github.com/hypothetical-andrei/wmda-2025/blob/main/c2/example7.1.py)
 
 ---
 
@@ -124,7 +139,7 @@
   - Clasificarea bolilor, evaluarea riscurilor
 - **Domeniul financiar**:
   - Scor de credit, detectarea fraudei
-- **[Exemplu: Cum folosește o bancă regresia logistică pentru a identifica tranzacțiile frauduloase]**
+- **[Exemplu: Cum folosește o bancă regresia logistică pentru a identifica tranzacțiile frauduloase]((https://github.com/hypothetical-andrei/wmda-2025/blob/main/c2/example8.py))**
 
 ---
 
