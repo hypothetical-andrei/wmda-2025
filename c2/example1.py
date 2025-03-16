@@ -34,5 +34,5 @@ accuracy = (y_pred == y_test).mean()
 print(f"Test Accuracy: {accuracy:.2f}")
 
 # Optional: Display the small dataset
-print("\nDataset:")
-print(df)
+# print("\nDataset:")
+# print(df)
