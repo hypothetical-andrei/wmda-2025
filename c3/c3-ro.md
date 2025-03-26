@@ -135,6 +135,7 @@
   - Performanța depinde mult de alegerea lui \(k\) și de metrica de distanță.
   - Sensibil la scalarea caracteristicilor și la caracteristicile irelevante.
 - **Exemplu**: [Prezicerea prețurilor locuințelor pe baza prețurilor celor mai apropiate locuințe în spațiul caracteristicilor (ex. dimensiune similară, locație etc.) prin media prețurilor]
+- **[Articol](https://www.analyticsvidhya.com/blog/2018/08/k-nearest-neighbor-introduction-regression-python/)**
 
 ---
 
