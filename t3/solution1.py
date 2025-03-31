@@ -20,11 +20,28 @@ df = pd.DataFrame(X, columns=["Feature1", "Feature2"])
 df["Price"] = y
 
 # 2. Separate features (X) and target (y)
+X = df[["Feature1", "Feature2"]]
+y = df["Price"]
 
 # 3. Split the dataset into training and test sets
+X_train, X_test, y_train, y_test = train_test_split(
+    X, y, test_size=0.3, random_state=42
+)
 
 # 4. Create and train the Linear Regression model
+model = LinearRegression()
+model.fit(X_train, y_train)
 
 # 5. Use the model to predict on the test set
+y_pred = model.predict(X_test)
 
 # 6. Evaluate the model
+r2 = r2_score(y_test, y_pred)
+mse = mean_squared_error(y_test, y_pred)
+mae = mean_absolute_error(y_test, y_pred)
+
+print("Coefficients:", model.coef_)
+print("Intercept:", model.intercept_)
+print(f"R² on test set: {r2:.3f}")
+print(f"MSE on test set: {mse:.3f}")
+print(f"MAE on test set: {mae:.3f}")

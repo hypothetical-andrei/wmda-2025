@@ -39,10 +39,24 @@ X_train, X_test, y_train, y_test = train_test_split(
 )
 
 # 4. Ridge vs. Lasso
+ridge = Ridge(alpha=1.0)
+lasso = Lasso(alpha=1.0)
 
 # Train the models
+ridge.fit(X_train, y_train)
+lasso.fit(X_train, y_train)
 
 # 5. Evaluate on the test set
+y_pred_ridge = ridge.predict(X_test)
+y_pred_lasso = lasso.predict(X_test)
+
+r2_ridge = r2_score(y_test, y_pred_ridge)
+mse_ridge = mean_squared_error(y_test, y_pred_ridge)
+mae_ridge = mean_absolute_error(y_test, y_pred_ridge)
+
+r2_lasso = r2_score(y_test, y_pred_lasso)
+mse_lasso = mean_squared_error(y_test, y_pred_lasso)
+mae_lasso = mean_absolute_error(y_test, y_pred_lasso)
 
 # 6. Compare coefficients and performance
 print("True Relationship: y = 3*X1 + 1.5*X2 + noise")

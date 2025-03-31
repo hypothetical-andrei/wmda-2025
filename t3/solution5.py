@@ -40,7 +40,20 @@ grid_search = GridSearchCV(
     cv=3,             # 3-fold cross-validation
     scoring="r2",     # Using R² for scoring
     n_jobs=-1         # Use all available CPU cores
+)
 
 # 6. Fit the grid search on the training set
+grid_search.fit(X_train, y_train)
 
 # 7. Find the best parameters and evaluate the best model on the test set
+print("Best Parameters:", grid_search.best_params_)
+best_model = grid_search.best_estimator_
+
+y_pred_test = best_model.predict(X_test)
+r2 = r2_score(y_test, y_pred_test)
+mse = mean_squared_error(y_test, y_pred_test)
+mae = mean_absolute_error(y_test, y_pred_test)
+
+print(f"Test Set R²: {r2:.3f}")
+print(f"Test Set MSE: {mse:.3f}")
+print(f"Test Set MAE: {mae:.3f}")
