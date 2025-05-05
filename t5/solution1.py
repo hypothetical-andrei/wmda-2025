@@ -25,7 +25,21 @@ class Perceptron:
         return np.array([self.predict_single(xi) for xi in X])
 
 # 1. AND gate dataset (linearly separable)
+X_and = np.array([[0, 0], [0, 1], [1, 0], [1, 1]])
+y_and = np.array([0, 0, 0, 1])
+
+model_and = Perceptron()
+model_and.fit(X_and, y_and)
+pred_and = model_and.predict(X_and)
+
 print("AND gate accuracy:", accuracy_score(y_and, pred_and))
 
 # 2. XOR gate dataset (non-linearly separable)
+X_xor = X_and
+y_xor = np.array([0, 1, 1, 0])
+
+model_xor = Perceptron()
+model_xor.fit(X_xor, y_xor)
+pred_xor = model_xor.predict(X_xor)
+
 print("XOR gate accuracy:", accuracy_score(y_xor, pred_xor))

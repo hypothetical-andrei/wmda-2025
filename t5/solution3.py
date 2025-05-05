@@ -53,4 +53,19 @@ activations = {
     'Tanh': nn.Tanh()
 }
 
-# Apply each function and draw comparative loss in a chart
+results = {}
+for name, act in activations.items():
+    print(f"Training with {name} activation")
+    model = build_model(act)
+    results[name] = train(model)
+
+# 5. Plot loss curves
+plt.figure(figsize=(8, 5))
+for name, loss_curve in results.items():
+    plt.plot(loss_curve, label=name)
+plt.title("Activation Function Comparison (Iris - Binary Classification)")
+plt.xlabel("Epoch")
+plt.ylabel("Loss")
+plt.legend()
+plt.grid(True)
+plt.show()

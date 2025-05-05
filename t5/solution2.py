@@ -24,7 +24,13 @@ optimizer = optim.Adam(model.parameters(), lr=0.01)
 # 4. Training loop
 losses = []
 for epoch in range(50):
-		# TODO
+    model.train()
+    optimizer.zero_grad()
+    y_pred = model(X)
+    loss = criterion(y_pred, y)
+    loss.backward()
+    optimizer.step()
+    losses.append(loss.item())
     if (epoch+1) % 10 == 0:
         print(f"Epoch {epoch+1}: Loss = {loss.item():.4f}")
 

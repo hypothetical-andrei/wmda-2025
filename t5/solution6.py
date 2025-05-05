@@ -31,14 +31,47 @@ X_train = torch.tensor(X_train, dtype=torch.float32)
 y_train = torch.tensor(y_train, dtype=torch.float32)
 
 # 2. Define model
+def build_model():
+    return nn.Sequential(
+        nn.Linear(16, 8),
+        nn.ReLU(),
+        nn.Linear(8, 1),
+        nn.Sigmoid()
+    )
 
 # 3. Train model for a given learning rate
+def train_model(lr, epochs=50):
+    model = build_model()
+    criterion = nn.BCELoss()
+    optimizer = optim.Adam(model.parameters(), lr=lr)
+    losses = []
 
+    for _ in range(epochs):
+        model.train()
+        y_pred = model(X_train)
+        loss = criterion(y_pred, y_train)
+        optimizer.zero_grad()
+        loss.backward()
+        optimizer.step()
+        losses.append(loss.item())
+
+    return losses
 
 # 4. Try different learning rates
 learning_rates = [0.1, 0.01, 0.001]
 results = {}
 
-
+for lr in learning_rates:
+    print(f"Training with learning rate: {lr}")
+    results[f"lr={lr}"] = train_model(lr)
 
 # 5. Plot training loss
+plt.figure(figsize=(8, 5))
+for label, loss_curve in results.items():
+    plt.plot(loss_curve, label=label)
+plt.title("Learning Rate Comparison on Congressional Voting Records")
+plt.xlabel("Epoch")
+plt.ylabel("Loss")
+plt.legend()
+plt.grid(True)
+plt.show()
