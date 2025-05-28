@@ -11,5 +11,8 @@ text = (
 )
 
 # Generate summary
+summary = summarizer(text, max_length=45, min_length=20, do_sample=False)
 
 # Print result
+print("Original Text:\n", text)
+print("\nGenerated Summary:\n", summary[0]['summary_text'])
