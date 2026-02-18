@@ -54,18 +54,6 @@ optimizers = {
     "RMSprop": optim.RMSprop
 }
 
-results = {}
-for name, opt_class in optimizers.items():
-    print(f"Training with {name}")
-    results[name] = train_model(opt_class, name)
+
 
 # 5. Plot training loss
-plt.figure(figsize=(8, 5))
-for name, losses in results.items():
-    plt.plot(losses, label=name)
-plt.title("Optimizer Comparison on Breast Cancer Dataset")
-plt.xlabel("Epoch")
-plt.ylabel("Binary Cross-Entropy Loss")
-plt.legend()
-plt.grid(True)
-plt.show()

@@ -24,9 +24,3 @@ decoder_hidden = torch.rand(batch_size, hidden_dim)
 context_vector, attn_weights = compute_attention(decoder_hidden, encoder_outputs)
 
 # Visualize attention weights
-words = ["The", "cat", "sat", "on", "mat"]
-plt.bar(words, attn_weights[0].detach().numpy())
-plt.title("Attention Weights")
-plt.ylabel("Weight")
-plt.xlabel("Input Words")
-plt.show()

@@ -20,24 +20,11 @@ X_train, X_test, y_train, y_test = train_test_split(
 #    - 'C' is the inverse of regularization strength (smaller => stronger regularization)
 #    - 'penalty' controls L1 vs. L2 regularization
 #    - 'solver' must support the selected penalty; 'saga' works for both l1 and l2.
-param_grid = {
-    'C': [0.01, 0.1, 1, 10],
-    'penalty': ['l1', 'l2'],
-    'solver': ['saga']
-}
 
 # 4. Set up the GridSearchCV with 5-fold cross-validation
 #    n_jobs=-1 uses all CPU cores to speed up the search
-grid_search = GridSearchCV(
-    estimator=LogisticRegression(max_iter=2000, random_state=42),
-    param_grid=param_grid,
-    cv=5,
-    n_jobs=-1,
-    scoring='accuracy'
-)
 
 # 5. Fit the grid search on the training data
-grid_search.fit(X_train, y_train)
 
 # 6. Retrieve the best parameters and the corresponding score
 print("Best Parameters found by grid search:", grid_search.best_params_)

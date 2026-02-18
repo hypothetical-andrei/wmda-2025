@@ -21,16 +21,7 @@ X_train, X_test, y_train, y_test = train_test_split(
 )
 
 # 4. Train a Naïve Bayes classifier (MultinomialNB is common for spam detection)
-model = MultinomialNB()
-model.fit(X_train, y_train)
 
 # 5. Predict on the test set
-y_pred = model.predict(X_test)
 
 # 6. Evaluate the model
-accuracy = accuracy_score(y_test, y_pred)
-conf_mat = confusion_matrix(y_test, y_pred)
-
-print(f"Test Accuracy: {accuracy:.3f}")
-print("\nConfusion Matrix:")
-print(conf_mat)

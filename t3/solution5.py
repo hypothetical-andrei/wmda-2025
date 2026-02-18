@@ -27,23 +27,10 @@ X_train, X_test, y_train, y_test = train_test_split(
 )
 
 # 4. Define the model and the parameter grid
-tree = DecisionTreeRegressor(random_state=42)
-param_grid = {
-    "max_depth": [2, 4, 6],
-    "min_samples_leaf": [1, 2, 4]
-}
 
 # 5. Set up the GridSearchCV
-grid_search = GridSearchCV(
-    estimator=tree,
-    param_grid=param_grid,
-    cv=3,             # 3-fold cross-validation
-    scoring="r2",     # Using R² for scoring
-    n_jobs=-1         # Use all available CPU cores
-)
 
 # 6. Fit the grid search on the training set
-grid_search.fit(X_train, y_train)
 
 # 7. Find the best parameters and evaluate the best model on the test set
 print("Best Parameters:", grid_search.best_params_)

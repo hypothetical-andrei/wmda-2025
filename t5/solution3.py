@@ -47,17 +47,6 @@ def train(model):
     return losses
 
 # 4. Try different activations
-activations = {
-    'ReLU': nn.ReLU(),
-    'Sigmoid': nn.Sigmoid(),
-    'Tanh': nn.Tanh()
-}
-
-results = {}
-for name, act in activations.items():
-    print(f"Training with {name} activation")
-    model = build_model(act)
-    results[name] = train(model)
 
 # 5. Plot loss curves
 plt.figure(figsize=(8, 5))

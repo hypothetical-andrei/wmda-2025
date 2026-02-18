@@ -16,37 +16,13 @@ y = wine.target
 # print(df.head())
 
 # 2. Split into training (80%) and testing (20%) sets
-X_train, X_test, y_train, y_test = train_test_split(
-    X, y,
-    test_size=0.2,
-    random_state=42
-)
 
 # 3. Train a Decision Tree Classifier
 #    max_depth=3 to control overfitting a bit
-model = DecisionTreeClassifier(max_depth=3, random_state=42)
-model.fit(X_train, y_train)
 
 # 4. Check accuracy on the test set
-y_pred = model.predict(X_test)
-accuracy = accuracy_score(y_test, y_pred)
-print(f"Test Accuracy: {accuracy:.2f}")
 
 # (Optional) Visualize the tree structure
-plt.figure(figsize=(10, 6))
-plot_tree(
-    model,
-    feature_names=wine.feature_names,
-    class_names=wine.target_names,
-    filled=True
-)
-plt.show()
 
 # (Optional) Feature importances
-importances = model.feature_importances_
-feature_importance_df = pd.DataFrame({
-    'Feature': wine.feature_names,
-    'Importance': importances
-}).sort_values('Importance', ascending=False)
-print("\nFeature Importances:")
-print(feature_importance_df)
+

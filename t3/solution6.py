@@ -29,30 +29,11 @@ X_train, X_test, y_train, y_test = train_test_split(
 )
 
 # 4. Feature scaling (recommended for distance-based methods like kNN)
-scaler = StandardScaler()
-X_train_scaled = scaler.fit_transform(X_train)
-X_test_scaled = scaler.transform(X_test)
 
 # 5. Create and train the kNN Regressor
 #    We'll start with n_neighbors=3 (can try different values)
-knn_reg = KNeighborsRegressor(n_neighbors=3)
-knn_reg.fit(X_train_scaled, y_train)
 
 # 6. Evaluate on the test set
-y_pred = knn_reg.predict(X_test_scaled)
-r2 = r2_score(y_test, y_pred)
-mse = mean_squared_error(y_test, y_pred)
-mae = mean_absolute_error(y_test, y_pred)
-
-print(f"R² on test set: {r2:.3f}")
-print(f"MSE on test set: {mse:.3f}")
-print(f"MAE on test set: {mae:.3f}")
 
 # 7. (Optional) Explore the effect of different k values
 #    You can loop over various values of k and compare performance.
-for k in [1, 3, 5, 7]:
-    knn_temp = KNeighborsRegressor(n_neighbors=k)
-    knn_temp.fit(X_train_scaled, y_train)
-    y_pred_temp = knn_temp.predict(X_test_scaled)
-    r2_temp = r2_score(y_test, y_pred_temp)
-    print(f"k={k}, R² = {r2_temp:.3f}")

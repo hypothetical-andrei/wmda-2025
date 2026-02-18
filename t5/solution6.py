@@ -40,22 +40,6 @@ def build_model():
     )
 
 # 3. Train model for a given learning rate
-def train_model(lr, epochs=50):
-    model = build_model()
-    criterion = nn.BCELoss()
-    optimizer = optim.Adam(model.parameters(), lr=lr)
-    losses = []
-
-    for _ in range(epochs):
-        model.train()
-        y_pred = model(X_train)
-        loss = criterion(y_pred, y_train)
-        optimizer.zero_grad()
-        loss.backward()
-        optimizer.step()
-        losses.append(loss.item())
-
-    return losses
 
 # 4. Try different learning rates
 learning_rates = [0.1, 0.01, 0.001]

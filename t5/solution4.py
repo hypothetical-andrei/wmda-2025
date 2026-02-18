@@ -24,15 +24,6 @@ y_train = torch.tensor(y_train.reshape(-1, 1), dtype=torch.float32)
 y_val = torch.tensor(y_val.reshape(-1, 1), dtype=torch.float32)
 
 # 2. Model builder with optional dropout and batch norm
-def build_model(use_dropout=False, use_batchnorm=False):
-    layers = [nn.Linear(4, 8)]
-    if use_batchnorm:
-        layers.append(nn.BatchNorm1d(8))
-    layers.append(nn.ReLU())
-    if use_dropout:
-        layers.append(nn.Dropout(0.5))
-    layers += [nn.Linear(8, 1), nn.Sigmoid()]
-    return nn.Sequential(*layers)
 
 # 3. Training function
 def train_model(model, epochs=50):

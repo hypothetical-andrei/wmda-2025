@@ -33,26 +33,12 @@ X_train_texts, X_test_texts, y_train, y_test = train_test_split(
 )
 
 # 3. Convert text into numerical features (TF-IDF)
-vectorizer = TfidfVectorizer(
-    stop_words='english',
-    max_features=3000  # Limit vocabulary size for speed
-)
-X_train = vectorizer.fit_transform(X_train_texts)
-X_test = vectorizer.transform(X_test_texts)
 
 # 4. Train a Logistic Regression model
-model = LogisticRegression(max_iter=2000, random_state=42)
-model.fit(X_train, y_train)
 
 # 5. Make predictions on the test set
-y_pred = model.predict(X_test)
 
 # 6. Evaluate performance
-accuracy = accuracy_score(y_test, y_pred)
-print(f"Accuracy: {accuracy:.2f}")
-
-print("\nClassification Report:")
-print(classification_report(y_test, y_pred, target_names=['neg', 'pos']))
 
 # (Optional) Display a few random predictions vs actual labels
 random_indices = np.random.choice(len(y_test), size=5, replace=False)

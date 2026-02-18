@@ -33,18 +33,8 @@ X_train, X_test, y_train, y_test = train_test_split(
 
 # 4. Create and train the Decision Tree Regressor
 #    You can tune hyperparameters like max_depth to control overfitting
-tree_reg = DecisionTreeRegressor(random_state=42, max_depth=4)
-tree_reg.fit(X_train, y_train)
 
 # 5. Evaluate on the test set
-y_pred = tree_reg.predict(X_test)
-r2 = r2_score(y_test, y_pred)
-mse = mean_squared_error(y_test, y_pred)
-mae = mean_absolute_error(y_test, y_pred)
-
-print(f"R² on test set: {r2:.3f}")
-print(f"MSE on test set: {mse:.3f}")
-print(f"MAE on test set: {mae:.3f}")
 
 # Optional: Inspect feature importances
 print("Feature importances:", tree_reg.feature_importances_)

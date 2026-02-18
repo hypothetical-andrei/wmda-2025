@@ -23,16 +23,6 @@ for w1, w2 in pairs:
 analogy_vector = word_vectors["king"] - word_vectors["man"] + word_vectors["woman"]
 
 # Find closest word (excluding input words)
-def closest_word(target_vector, word_vectors, exclude):
-    best_word = None
-    best_sim = -1
-    for word, vec in word_vectors.items():
-        if word not in exclude:
-            sim = cosine_similarity(target_vector, vec)
-            if sim > best_sim:
-                best_sim = sim
-                best_word = word
-    return best_word
 
 result = closest_word(analogy_vector, word_vectors, exclude=["king", "man", "woman"])
 print(f"\nAnalogy: king - man + woman ≈ {result}")

@@ -26,11 +26,6 @@ x_data = pad_sequences(sequences, maxlen=max_len, padding='post')
 y_data = np.array(labels)
 
 # 3. Build LSTM model
-model = Sequential([
-    Embedding(input_dim=len(word_index)+1, output_dim=8, input_length=max_len),
-    LSTM(16),
-    Dense(1, activation='sigmoid')
-])
 
 model.compile(optimizer='adam', loss='binary_crossentropy', metrics=['accuracy'])
 model.summary()
