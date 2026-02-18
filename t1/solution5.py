@@ -10,9 +10,3 @@ from sklearn.metrics import accuracy_score, classification_report
 df = sns.load_dataset("titanic")
 
 # Step 2: Feature Engineering (from Exercise 4)
-df["family_size"] = df["sibsp"] + df["parch"] + 1  # Create new feature
-df["age"].fillna(df["age"].median(), inplace=True)  # Handle missing age values
-df["embarked"].fillna(df["embarked"].mode()[0], inplace=True)  # Handle missing embarked values
-df.dropna(subset=["fare"], inplace=True)  # Remove rows with missing fare values
-df = pd.get_dummies(df, columns=["sex", "embarked"], drop_first=True)  # One-hot encoding
-
