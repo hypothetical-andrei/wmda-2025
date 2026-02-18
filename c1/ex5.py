@@ -15,10 +15,10 @@ print("Original Customer Database:\n")
 print(df)
 
 # Step 2: Remove duplicate records based on all columns
-df_cleaned = df.drop_duplicates()
+# df_cleaned = df.drop_duplicates()
 
-print("\nDatabase After Removing Exact Duplicates:\n")
-print(df_cleaned)
+# print("\nDatabase After Removing Exact Duplicates:\n")
+# print(df_cleaned)
 
 # Step 3: Remove duplicates based on specific columns (e.g., customer_id)
 df_cleaned = df.drop_duplicates(subset=["customer_id"], keep="first")
