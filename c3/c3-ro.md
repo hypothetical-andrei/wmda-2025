@@ -23,7 +23,7 @@
 
 ## 3: Bazele regresiei liniare
 - **Concept**:
-  - Forma modelului: \( y = \beta_0 + \beta_1 x_1 + \dots + \beta_n x_n \)
+  - Forma modelului: y = beta_0 + beta_1 * x_1 + ... + beta_n  * x_n
   - Presupune o relație liniară între predictori și țintă
 - **Terminologie**:
   - Coeficienți (ponderi)
@@ -74,10 +74,10 @@
 ## 7: Regularizare Lasso & Ridge
 - **Scopul regularizării**: Controlul complexității modelului, reducerea varianței
 - **Regularizare Ridge (L2)**:
-  - Adaugă un termen penalizant \( \lambda \sum \beta_i^2 \)
+  - Adaugă un termen penalizant lambda * sum(beta_i^2)
   - Micșorează coeficienții dar rareori îi reduce complet la zero
 - **Regularizare Lasso (L1)**:
-  - Adaugă un termen penalizant \( \lambda \sum |\beta_i| \)
+  - Adaugă un termen penalizant lambda * sum(|beta_i|)
   - Poate reduce unii coeficienți la zero (selecție de caracteristici)
 - **Ajustarea Hiperparametrilor**:
   - Alegerea lui \(\lambda\) (forța regularizării)

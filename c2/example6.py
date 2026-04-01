@@ -29,6 +29,7 @@ model.fit(X_train, y_train)
 y_pred = model.predict(X_test)
 
 # 5. Compute the confusion matrix
+# TODO check
 conf_mat = confusion_matrix(y_test, y_pred)
 print("Confusion Matrix:")
 print(conf_mat)
