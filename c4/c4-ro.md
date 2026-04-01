@@ -145,11 +145,11 @@ Valori **mai mari** indică un clustering mai bun.
 
 ## Rand Index și Adjusted Rand Index
 
-Pentru orice pereche de puncte $(i, j)$, se numără acordurile cu etichetele reale:
+Pentru orice pereche de puncte $(i, j)$, se numără asocierile cu etichetele reale:
 
 $RI = \frac{TP + TN}{TP + TN + FP + FN}$
 
-Adjusted Rand Index corectează pentru acordurile întâmplătoare:
+Adjusted Rand Index corectează pentru asocierile întâmplătoare:
 
 $ARI = \frac{RI - \mathbb{E}[RI]}{\max(RI) - \mathbb{E}[RI]}$
 
